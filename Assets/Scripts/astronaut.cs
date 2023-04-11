@@ -38,4 +38,12 @@ public class Astronaut : MonoBehaviour
         float rotation = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = rotation;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Weapon"))
+        {
+
+        }
+    }
 }
