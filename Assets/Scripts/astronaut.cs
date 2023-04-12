@@ -9,7 +9,9 @@ public class Astronaut : MonoBehaviour
     Vector2 movement;
 
     public Camera cam;
-    Vector2 mousePosition; 
+    Vector2 mousePosition;
+
+    public Inventory inventory;
 
     // Start is called before the first frame update
     void Start()
@@ -41,9 +43,10 @@ public class Astronaut : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Weapon"))
+        InventoryItem item = collision.GetComponent<InventoryItem>();
+        if (item != null)
         {
-
+            inventory.AddItem(item);
         }
     }
 }
